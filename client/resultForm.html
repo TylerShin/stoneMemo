@@ -1,0 +1,14 @@
+<template name="resultForm">
+    <div class="result-form clearfix">
+        <h2>결과입력</h2>
+        {{#autoForm collection="Results" doc=this id="insertResultsForm" type="insert"}}
+            {{> afQuickField name='matchResult' type='boolean-radios' required="true" trueLabel='승리' falseLabel='패배' }}
+            {{> afQuickField name='myChar' type='select' options='allowed' firstOption='직업을 선택하세요.' label='내 직업' }}
+            {{> afQuickField name='myDeck' label='내 덱' }}
+            {{> afQuickField name='otherChar' type='select' options='allowed' firstOption='직업을 선택하세요.' label='상대 직업' }}
+            {{> afQuickField name='otherDeck' label='상대 덱' }}
+            {{> afQuickField name='memo' label='메모(100글자 이내)' }}
+            <button type="submit" class="btn btn-primary pull-right">저장하기</button>
+        {{/autoForm}}
+    </div>
+</template>

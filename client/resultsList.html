@@ -1,0 +1,40 @@
+<template name="resultsList">
+    {{#if Template.subscriptionsReady}}
+        {{#if currentUser}}
+            <div class="container">
+                <div class="resultsList">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>승패여부</th>
+                                <th>내 직업</th>
+                                <th>내 댁</th>
+                                <th>상대 직업</th>
+                                <th>상대 덱</th>
+                                <th>기록일</th>
+                                <th>메모</th>
+                                <th>액션</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{# each matchResults}}
+                                {{> resultItem}}
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="btn btn-sm btn-block btn-primary {{noMore}}" name="firePagination">{{noMore}}</button>
+                </div>
+                {{> resultForm}}
+            </div>
+        {{else}}
+            <h2>
+                먼저 우측상단의 메뉴에서 회원가입이나 로그인을 해주세요.
+            </h2>
+        {{/if}}
+    {{else}}
+        {{> spinner}}
+    {{/if}}
+</template>
