@@ -2,6 +2,9 @@
 
 ## Blizzard's HearthStone personal memo app  
 
+### Visit(DEMO)  
+http://stonememo.meteor.com
+
 ### Usage
 It's super simple to start.   
 
